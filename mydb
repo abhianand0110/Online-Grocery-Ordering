@@ -1,0 +1,53 @@
+DROP TABLE IF EXISTS `customer_details`;
+
+CREATE TABLE `customer_details` (
+  `customer_id`   INTEGER PRIMARY KEY AUTOINCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `email_id` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `phone_no` varchar(100) DEFAULT NULL
+);
+
+DROP TABLE IF EXISTS `product_details`;
+
+CREATE TABLE `product_details` (
+  `product_id`  INTEGER PRIMARY KEY AUTOINCREMENT,
+  `product_name` varchar(100) DEFAULT NULL,
+  `prod_img` varchar(100) DEFAULT NULL,
+  `product_desc` varchar(100) DEFAULT NULL,
+  `cat_id` INTEGER DEFAULT NULL,
+  `product_price` varchar(100) DEFAULT NULL
+);
+
+DROP TABLE IF EXISTS `order_details`;
+
+CREATE TABLE `order_details` (
+  `order_no`  INTEGER PRIMARY KEY AUTOINCREMENT,
+  `quantity` varchar(100) DEFAULT NULL,
+  `prod_id` INTEGER DEFAULT NULL,
+  `cust_id` INTEGER DEFAULT NULL
+);
+
+DROP TABLE IF EXISTS `category`;
+
+CREATE TABLE `category` (
+  `category_id`  INTEGER PRIMARY KEY AUTOINCREMENT,
+  `category_name` varchar(100) DEFAULT NULL
+);
+
+
+insert into customer_details(name,password,email_id,address,phone_no) values("abhishek","1234","abhi@gmail.com","Kolkata","8969419380");
+insert into order_details(quantity,prod_id,cust_id) values("1",1,1);
+insert into product_details(product_name,prod_img,product_desc,product_price) values("milk","file:///C:/Users/HP/Downloads/crud_App/src/main/webapp/Images/buck.jpg","fresh milk","100"); 
+insert into category(category_name) values("Dairy products");
+insert into category(category_name) values("chocolate");
+insert into category(category_name) values("General");
+insert into category(category_name) values("Stationary");
+
+--customer_details(customer_id,name,password,email_id,address,phone_no)
+--order_details(order_no,name,quantity,prod_id,cust_id)
+--product_details(product_id,product_name,prod_img,product_des,product_price)
+--category(category_id,category_name)
+
+select * from product_details;
